@@ -14,7 +14,7 @@ import moduloesfuerzoapi.springbootapi.application.model.CargaEsfInc;
 @Repository
 public interface CargaEsfIncRepository extends JpaRepository<CargaEsfInc, Integer>{
 	
-	@Query("SELECT c FROM CargaEsfInc c WHERE c.eid = :eid")
+	@Query("SELECT c FROM CargaEsfInc c WHERE c.eid = :eid ORDER BY c.fecha_actividad")
     public List<CargaEsfInc> findByUsrAsignado(@Param("eid") String usrAsignado);
 	
 	@Query("SELECT COALESCE(MAX(c.carga_esf_inc_id),0) FROM CargaEsfInc c")
