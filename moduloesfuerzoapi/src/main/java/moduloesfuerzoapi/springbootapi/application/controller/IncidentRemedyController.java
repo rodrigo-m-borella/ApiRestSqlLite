@@ -106,6 +106,7 @@ public class IncidentRemedyController {
 					ceis.setEid( cargaEsfInc.getEid());
 					ceis.setFecha_actividad( cargaEsfInc.getFecha_actividad());
 					ceis.setHoras( cargaEsfInc.getHoras());
+					ceis.setHorastasa( cargaEsfInc.getHorastasa());
 					ceis.setInc_id( cargaEsfInc.getInc_id());
 					ceis.setObservaciones( cargaEsfInc.getObservaciones());
 					ceis.setTitulo( cargaEsfInc.getTitulo());
@@ -149,6 +150,7 @@ public class IncidentRemedyController {
 			cargaEsfInc.setEid(cris.getEid());
 			cargaEsfInc.setFecha_actividad(cris.getFecha_actividad());
 			cargaEsfInc.setHoras(cris.getHoras());
+			cargaEsfInc.setHorastasa(cris.getHorastasa());
 			cargaEsfInc.setInc_id(cris.getInc_id());
 			cargaEsfInc.setObservaciones(cris.getObservaciones());
 			cargaEsfInc.setTitulo(cris.getTitulo());

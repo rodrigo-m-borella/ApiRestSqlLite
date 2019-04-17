@@ -17,7 +17,7 @@ import lombok.Data;
 
 
 @Entity
-@Table(name="CARGA_ESF_INC")
+@Table(name="CARGA_ESF_EVOL")
 
 //@NamedQuery(
 //		name="IncidentRemedy.findByUsrAsignado",
@@ -26,11 +26,12 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class CargaEsfInc {
+public class CargaEsfEvol {
 	
 	@Id
-	Integer carga_esf_inc_id;
-	String inc_id;
+	Integer carga_esf_evol_id;
+	String pry;
+	String ot;
     String fecha_actividad;
     String horas;
     String horastasa;
