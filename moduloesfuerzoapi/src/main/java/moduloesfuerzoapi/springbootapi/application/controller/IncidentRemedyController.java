@@ -106,6 +106,7 @@ public class IncidentRemedyController {
 					ceis.setEid( cargaEsfInc.getEid());
 					ceis.setFecha_actividad( cargaEsfInc.getFecha_actividad());
 					ceis.setHoras( cargaEsfInc.getHoras());
+					ceis.setHorastasa( cargaEsfInc.getHorastasa());
 					ceis.setInc_id( cargaEsfInc.getInc_id());
 					ceis.setObservaciones( cargaEsfInc.getObservaciones());
 					ceis.setTitulo( cargaEsfInc.getTitulo());
@@ -149,6 +150,7 @@ public class IncidentRemedyController {
 			cargaEsfInc.setEid(cris.getEid());
 			cargaEsfInc.setFecha_actividad(cris.getFecha_actividad());
 			cargaEsfInc.setHoras(cris.getHoras());
+			cargaEsfInc.setHorastasa(cris.getHorastasa());
 			cargaEsfInc.setInc_id(cris.getInc_id());
 			cargaEsfInc.setObservaciones(cris.getObservaciones());
 			cargaEsfInc.setTitulo(cris.getTitulo());
@@ -164,6 +166,30 @@ public class IncidentRemedyController {
 		
 		return ResponseEntity.ok().body(cargaEsfIncSelectedArr);	
 	}
+	
+	
+	@CrossOrigin(origins = "*")
+	@PostMapping("/deleteManualCharge")
+//	public ResponseEntity<IncidentRemedy> updateIncidentById(@PathVariable(value="incidencia") Long incId, @Valid @RequestBody IncidentRemedy irWhithUpdates){
+		public ResponseEntity<@Valid ArrayList<CargaEsfIncSelected>> deleteIncidentById(@Valid @RequestBody ArrayList<CargaEsfIncSelected> cargaEsfIncSelectedArr){
+		
+		for (CargaEsfIncSelected cris: cargaEsfIncSelectedArr){
+			if (cris.getCarga_esf_inc_id()!=null){
+				cargaEsfIncDao.deleteById(cris.getCarga_esf_inc_id());
+			}
+		}
+		
+//		IncidentRemedy ir = (IncidentRemedy) incidentRemedyDao.getOne(irWhithUpdates.getIncidencia());
+//		if (ir==null){
+//			return ResponseEntity.notFound().build();
+//		}
+		
+//		IncidentRemedy updateIncidentRemedy = incidentRemedyDao.save(irWhithUpdates);
+		
+		return ResponseEntity.ok().body(cargaEsfIncSelectedArr);	
+	}
+	
+	
 	
 	
 	@CrossOrigin(origins = "*")
